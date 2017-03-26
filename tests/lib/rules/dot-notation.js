@@ -153,6 +153,11 @@ ruleTester.run("dot-notation", rule, {
             options: [{ allowKeywords: false }],
             errors: [{ message: ".while is a syntax error." }],
             output: null // Not fixed due to comment
+        },
+        {
+            code: "1['toString']",
+            output: "1 .toString",
+            errors: [{ message: "[\"toString\"] is better written in dot notation." }]
         }
     ]
 });
